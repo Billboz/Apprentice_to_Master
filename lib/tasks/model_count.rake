@@ -1,13 +1,10 @@
 namespace :model_count do
-  desc 'Count of Masters'
-  task :count_masters, [:Master] => :environment do
-    count = Master.count
-    puts count
-  end
+  desc 'Count of Models'
+  task :count, [:Master] => :environment do
+    Rails.application.eager_load!
 
-  desc 'Count of Apprentices'
-  task :count_apprentices => :environment do
-    count = Apprentice.count
-    puts count
+    ActiveRecord::Base.descendants.each do |model|
+      puts "#{model.table_name}: #{model.count}"
+    end
   end
 end
