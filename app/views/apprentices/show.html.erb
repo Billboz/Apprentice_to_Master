@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @apprentice.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @apprentice.city %>
+</p>
+
+<p>
+  <strong>Master name:</strong>
+  <%= @apprentice.name_of_master(@apprentice.master_id) %>
+</p>
+
+
+<%= link_to 'Edit', edit_apprentice_path(@apprentice) %> |
+<%= link_to 'Back', apprentices_path %>
