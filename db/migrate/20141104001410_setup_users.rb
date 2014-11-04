@@ -1,8 +1,8 @@
 class SetupUsers < ActiveRecord::Migration
   def change
-        user = User.first
+        user_id = User.first
 
-        Master.update_all "user = #{user}"
+        Master.update_all "user = #{user_id}"
 
   end
 end
