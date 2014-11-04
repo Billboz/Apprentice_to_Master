@@ -2,13 +2,13 @@
 #
 # Table name: apprentices
 #
-#  id          :integer          not null, primary key
-#  name        :string(255)
-#  city        :string(255)
-#  master_name :string(255)
-#  master_id   :integer
-#  created_at  :datetime
-#  updated_at  :datetime
+#  id         :integer          not null, primary key
+#  name       :string(255)
+#  city       :string(255)
+#  master_id  :integer
+#  created_at :datetime
+#  updated_at :datetime
+#  user_id    :integer
 #
 
 require 'test_helper'

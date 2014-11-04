@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141102211607) do
+ActiveRecord::Schema.define(version: 20141104001410) do
 
   create_table "apprentices", force: true do |t|
     t.string   "name"
@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20141102211607) do
     t.integer  "master_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   add_index "apprentices", ["master_id"], name: "index_apprentices_on_master_id"
@@ -30,6 +31,17 @@ ActiveRecord::Schema.define(version: 20141102211607) do
     t.boolean  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
+
+  create_table "users", force: true do |t|
+    t.string   "name"
+    t.integer  "age"
+    t.integer  "apprentice_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "users", ["apprentice_id"], name: "index_users_on_apprentice_id"
 
 end
