@@ -13,4 +13,8 @@
 class User < ActiveRecord::Base
   has_many :apprentices
   has_many :masters
+
+  def admin?
+    self.role == 'admin'
+  end
 end

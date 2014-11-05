@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
 
-  root 'application#home'
+  root 'session#welcometo'
 
   resources :apprentices
 
   resources :masters
 
   resources :users
+
+  post 'signin', to: 'session#signin'
+
+  delete 'signout', to: 'session#signout'
 
 
   # The priority is based upon order of creation: first created -> highest priority.

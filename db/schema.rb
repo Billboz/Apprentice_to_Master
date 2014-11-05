@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141104001410) do
+ActiveRecord::Schema.define(version: 20141105165202) do
 
   create_table "apprentices", force: true do |t|
     t.string   "name"
@@ -40,6 +40,8 @@ ActiveRecord::Schema.define(version: 20141104001410) do
     t.integer  "apprentice_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "email"
+    t.string   "role",          limit: 25, default: "user"
   end
 
   add_index "users", ["apprentice_id"], name: "index_users_on_apprentice_id"

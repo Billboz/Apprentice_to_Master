@@ -15,4 +15,7 @@
 class Master < ActiveRecord::Base
   has_many :apprentices
   belongs_to :user
+
+  scope :for_user, ->(user) { where(user: user) }
+
 end

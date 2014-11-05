@@ -16,6 +16,32 @@
 </head>
 <body>
 
+<% if current_user && current_user.admin? %>
+<% end %>
+
+<% if flash[:notice] %>
+    <div class="alert alert-success"><%= flash[:notice] %></div>
+<% end %>
+<% if flash[:error] %>
+    <div class="alert alert-danger"><%= flash[:error] %></div>
+<% end %>
+<% if flash[:warning] %>
+    <div class="alert alert-warning"><%= flash[:warning] %></div>
+<% end %>
+
+
+<div class="row">
+  <div class="col-md-12">
+    <h1>Apprentice to Master</h1>
+  </div>
+</div>
+
+<ul class="nav nav-tabs" role="tablist">
+  <li role="presentation" class="active"><a href="#">Home</a></li>
+  <li role="presentation"><a href="#">Profile</a></li>
+  <li role="presentation"><a href="#">Messages</a></li>
+</ul>
+
 <%= yield %>
 
 </body>

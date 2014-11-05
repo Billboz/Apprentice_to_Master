@@ -4,7 +4,7 @@ class MastersController < ApplicationController
   # GET /masters
   # GET /masters.json
   def index
-    @masters = Master.where(user: current_user)
+    @masters = Master.for_user(current_user)
   end
 
   # GET /masters/1
@@ -66,7 +66,7 @@ class MastersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_master
-      @master = Master.find(params[:id])
+      @master = Master.for_user(current_user).find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

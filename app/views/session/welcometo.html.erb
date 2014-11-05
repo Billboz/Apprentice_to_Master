@@ -1,0 +1,19 @@
+<div class="jumbotron">
+    <h1>Welcome<%= " " + current_user.name if current_user%>!</h1>
+    <p>Your Mentor Awaits!</p>
+
+
+
+  <h2><%= link_to 'Get Started', masters_path %></h2>
+
+</div>
+
+<% if current_user %>
+    <h3><%= link_to "Sign out", signout_path, method: :delete%></h3>
+<% else %>
+<h3>Please sign in</h3>
+<%= form_tag signin_path, class: 'form' do %>
+    <%= text_field_tag "email", nil, placeholder: 'Enter your email' %>
+    <%= submit_tag "Sign in", class: 'btn btn-sm' %>
+<% end %>
+<% end %>
