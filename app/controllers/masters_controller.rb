@@ -4,7 +4,7 @@ class MastersController < ApplicationController
   # GET /masters
   # GET /masters.json
   def index
-    @masters = Master.all
+    @masters = Master.where(user: current_user)
   end
 
   # GET /masters/1
@@ -26,6 +26,7 @@ class MastersController < ApplicationController
   # POST /masters.json
   def create
     @master = Master.new(master_params)
+    @master.user = current_user
 
     respond_to do |format|
       if @master.save
