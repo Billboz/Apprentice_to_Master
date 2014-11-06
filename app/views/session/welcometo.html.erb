@@ -1,11 +1,7 @@
 <div class="jumbotron">
     <h1>Welcome<%= " " + current_user.name if current_user%>!</h1>
     <p>Your Mentor Awaits!</p>
-
-
-
-  <h2><%= link_to 'Get Started', masters_path %></h2>
-
+    <p>Choose one of the tabs above.</p>
 </div>
 
 <% if current_user %>

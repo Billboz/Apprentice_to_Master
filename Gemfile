@@ -54,6 +54,7 @@ gem 'thin'
 group :production do
   gem 'pg'
   gem 'rails_12factor'
+  gem 'pry-rails'
 end
 
 # For now, continue to use sqlite3 in development

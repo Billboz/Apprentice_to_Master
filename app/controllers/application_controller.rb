@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in?
-    retrun true if current_user.present?
+    return true if current_user.present?
   end
 
   def authenticate
@@ -34,4 +34,5 @@ class ApplicationController < ActionController::Base
   end
 
   helper_method :current_user
+  helper_method :signed_in?
 end

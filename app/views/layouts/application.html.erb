@@ -36,7 +36,7 @@
 </div>
 
 
-<ul class="nav nav-tabs" role="tablist">
+<ul class="nav nav-pills" role="tablist">
   <li role="presentation"><%= link_to 'Master List', masters_path %></li>
   <li role="presentation"><%= link_to 'Apprentice List', apprentices_path %></li>
   <% if current_user && current_user.admin? %>
@@ -46,5 +46,10 @@
 
 <%= yield %>
 
+<% if signed_in? == false %>
+<%= render 'layouts/footer' %>
+<% end %>
+
 </body>
+
 </html>
