@@ -16,8 +16,6 @@
 </head>
 <body>
 
-<% if current_user && current_user.admin? %>
-<% end %>
 
 <% if flash[:notice] %>
     <div class="alert alert-success"><%= flash[:notice] %></div>
@@ -31,15 +29,19 @@
 
 
 <div class="row">
-  <div class="col-md-12">
-    <h1>Apprentice to Master</h1>
+  <div class="col-md-12 text-center">
+    <p><h1>Apprentice to Master</h1></p>
+
   </div>
 </div>
 
+
 <ul class="nav nav-tabs" role="tablist">
-  <li role="presentation" class="active"><a href="#">Home</a></li>
-  <li role="presentation"><a href="#">Profile</a></li>
-  <li role="presentation"><a href="#">Messages</a></li>
+  <li role="presentation"><%= link_to 'Master List', masters_path %></li>
+  <li role="presentation"><%= link_to 'Apprentice List', apprentices_path %></li>
+  <% if current_user && current_user.admin? %>
+  <li role="presentation"><%= link_to 'Users List', users_path %></li>
+  <% end %>
 </ul>
 
 <%= yield %>

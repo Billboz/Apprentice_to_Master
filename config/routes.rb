@@ -8,9 +8,16 @@ Rails.application.routes.draw do
 
   resources :users
 
-  post 'signin', to: 'session#signin'
+  resources :masters do
+    collection do
+      post 'search', to: 'masters#search'
+    end
+  end
 
+  post 'signin', to: 'session#signin'
+  post 'signup', to: 'session#signup'
   delete 'signout', to: 'session#signout'
+
 
 
   # The priority is based upon order of creation: first created -> highest priority.

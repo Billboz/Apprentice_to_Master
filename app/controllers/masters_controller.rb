@@ -11,6 +11,12 @@ class MastersController < ApplicationController
   # GET /masters/1.json
   def show
 
+    def search
+      @masters = Master.for_user(current_user)
+        .where("title like ?", "%#{search_query}%"), "%#{params[:search_query]}%"
+        render :template => 'masters/index'
+    end
+
   end
 
   # GET /masters/new

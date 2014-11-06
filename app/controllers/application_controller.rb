@@ -12,6 +12,10 @@ class ApplicationController < ActionController::Base
     @current_user ||= User.find_by id:session[:user_id]
   end
 
+  def signed_in?
+    retrun true if current_user.present?
+  end
+
   def authenticate
     if current_user
     return true

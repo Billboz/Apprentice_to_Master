@@ -37,6 +37,8 @@ gem 'pry'
 # gem 'capistrano-rails', group: :development
 
 gem 'carrierwave'
+gem 'bcrypt', '~> 3.1.9'
+
 
 # Use debugger
 gem 'debugger', group: [:development, :test]
