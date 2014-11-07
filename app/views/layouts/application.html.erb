@@ -35,7 +35,7 @@
   </div>
 </div>
 
-
+<% if signed_in? %>
 <ul class="nav nav-pills" role="tablist">
   <li role="presentation"><%= link_to 'Master List', masters_path %></li>
   <li role="presentation"><%= link_to 'Apprentice List', apprentices_path %></li>
@@ -43,6 +43,8 @@
   <li role="presentation"><%= link_to 'Users List', users_path %></li>
   <% end %>
 </ul>
+<% end %>
+
 
 <%= yield %>
 
